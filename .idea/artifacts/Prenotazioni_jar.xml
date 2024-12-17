@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Prenotazioni:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Prenotazioni_jar</output-path>
+    <root id="archive" name="Prenotazioni.jar">
+      <element id="module-output" name="Prenotazioni" />
+    </root>
+  </artifact>
+</component>
