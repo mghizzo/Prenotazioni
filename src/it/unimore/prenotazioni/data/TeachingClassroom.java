@@ -71,6 +71,8 @@ public class TeachingClassroom extends Classroom {
 
     @Override
     public boolean validateTime(int startTime, int endTime) {
-        return true;
+        int totalHours = endTime - startTime;
+
+        return totalHours <= 8;
     }
 }

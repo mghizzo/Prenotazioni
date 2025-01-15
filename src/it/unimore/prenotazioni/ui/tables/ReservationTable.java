@@ -6,7 +6,6 @@ import it.unimore.prenotazioni.data.Reservation;
 import it.unimore.prenotazioni.managers.ClassroomManager;
 import it.unimore.prenotazioni.managers.ReservationManager;
 import it.unimore.prenotazioni.ui.dialogs.ManageReservationDialog;
-import it.unimore.prenotazioni.ui.windows.MainWindow;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -60,8 +59,6 @@ public class ReservationTable extends Table {
                     Reservation newReservation = dialog.getReservation();
                     if(newReservation == null) {
                         reservationManager.removeReservation(classroom, reservationIndex);
-                    } else {
-                        reservationManager.setReservation(classroom, reservationIndex, newReservation);
                     }
                     reload();
                 }

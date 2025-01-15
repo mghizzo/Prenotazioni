@@ -64,7 +64,6 @@ public class ManageReservationDialog extends Dialog {
         this.reservation = reservation;
         this.initComponents();
         this.setVisible(true);
-//        System.out.println(Helpers.getWindow(this, MainWindow.class));
 
     }
 
@@ -114,7 +113,16 @@ public class ManageReservationDialog extends Dialog {
                 JOptionPane.showMessageDialog(this, "Periodo non valido", "Errore", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            this.reservation = temporaryReservation;
+            if(this.reservation != null) {
+                this.reservation.setDate(temporaryReservation.getDate());
+                this.reservation.setStartHour(temporaryReservation.getStartHour());
+                this.reservation.setEndHour(temporaryReservation.getEndHour());
+                this.reservation.setReservedBy(temporaryReservation.getReservedBy());
+                this.reservation.setReason(temporaryReservation.getReason());
+            } else {
+                this.reservation = temporaryReservation;
+            }
+
             close();
         });
 
@@ -143,7 +151,9 @@ public class ManageReservationDialog extends Dialog {
         panel.add(reasonField);
 
         panel.add(saveButton);
-        panel.add(deleteButton);
+        if(reservation != null) {
+            panel.add(deleteButton);
+        }
 
         this.add(panel);
     }
